@@ -1,29 +1,29 @@
 <html>
 
 <head>
-    <title>Data Penduduk</title>
+    <title>Data Peminjam</title>
     <link rel="stylesheet" type="text/css" href="css/ionic.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/geturi.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-        var id = decodeURI(getUrlVars()["id"]);
+        var Id = decodeURI(getUrlVars()["Id"]);
         var nama = decodeURI(getUrlVars()["nama"]);
-        var barang = decodeURI(getUrlVars()["barang"]);
-        var jumlah = decodeURI(getUrlVars()["jumlah"]);
-        $("#id").val(id);
+        var judul_buku = decodeURI(getUrlVars()["judul_buku"]);
+        var penulis = decodeURI(getUrlVars()["penulis"]);
+        $("#Id").val(Id);
         $("#nama").val(nama);
-        $("#barang").val(barang);
-        $("#jumlah").val(jumlah);
+        $("#judul_buku").val(judul_buku);
+        $("#penulis").val(penulis);
         $("#update").click(function() {
-            var id = $("#id").val();
+            var Id = $("#Id").val();
             var nama = $("#nama").val();
-            var barang = $("#barang").val();
-            var jumlah = $("#jumlah").val();
-            var dataString = "id=" + id + "&nama=" + nama + "&barang=" + barang + "&jumlah=" + jumlah +  "&update=";
+            var judul_buku = $("#judul_buku").val();
+            var penulis = $("#penulis").val();
+            var dataString = "Id=" + Id + "&nama=" + nama + "&judul_buku=" + judul_buku + "&penulis=" + penulis + "&update=";
             $.ajax({
                 type: "POST",
-                url: "https://yelcobaweb.000webhostapp.com/appcordova-test/appcordova/appcordova/www/update.php",
+                url: "https://manas10.000webhostapp.com/cordova-test/appcordova-test/appcordova/www/update.php",
                 data: dataString,
                 crossDomain: true,
                 cache: false,
@@ -42,11 +42,11 @@
 
         });
         $("#delete").click(function() {
-            var id = $("#id").val();
-            var dataString = "id=" + id + "&delete=";
+            var Id = $("#Id").val();
+            var dataString = "Id=" + Id + "&delete=";
             $.ajax({
                 type: "GET",
-                url: "https://yelcobaweb.000webhostapp.com/appcordova-test/appcordova/appcordova/www/delete.php",
+                url: "https://manas10.000webhostapp.com/cordova-test/appcordova-test/appcordova/www/delete.php",
                 data: dataString,
                 crossDomain: true,
                 cache: false,
@@ -77,22 +77,22 @@
     <br/>
     <br/>
     <div class="list">
-        <input type="hidden" id="id" value="" />
+        <input type="hidden" Id="Id" value="" />
         <div class="item">
             <label>Nama</label>
-            <input type="text" id="nama" value="" />
+            <input type="text" Id="nama" value="" />
         </div>
         <div class="item">
-            <label>barang</label>
-            <input type="text" id="barang" value="" />
+            <label>Judul Buku</label>
+            <input type="text" Id="judul_buku" value="" />
         </div>
         <div class="item">
-            <label>Jumlah</label>
-            <input type="text" id="jumlah" value="" />
+            <label>Penulis</label>
+            <input type="text" Id="penulis" value="" />
         </div>
         <div class="item">
-            <input type="button" id="update" class="button button-block" value="Update" />
-            <input type="button" id="delete" class="button button-block" value="Delete" />
+            <input type="button" Id="update" class="button button-block" value="Update" />
+            <input type="button" Id="delete" class="button button-block" value="Delete" />
         </div>
     </div>
 </body>
