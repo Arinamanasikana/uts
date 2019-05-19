@@ -1,20 +1,20 @@
 <html>
 
 <head>
-    <title>Data Penduduk</title>
+    <title>Data Peminjam</title>
     <link rel="stylesheet" type="text/css" href="css/ionic.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-        var url = "https://yelcobaweb.000webhostapp.com/appcordova-test/appcordova/appcordova/www/json.php";
+        var url = "https://manas10.000webhostapp.com/cordova-test/appcordova-test/appcordova/www/json.php";
         $.getJSON(url, function(result) {
             console.log(result);
             $.each(result, function(i, field) {
-                var id = field.id;
+                var Id = field.Id;
                 var nama = field.nama;
-                var barang = field.barang;
-                var jumlah = field.jumlah;
-                $("#listview").append("<a class='item' href='form.html?id=" + id + "&nama=" + nama + "&barang=" + barang + "&jumlah=" + jumlah + "'><h2>" + nama + " </h2><p>" + barang + "</p><p>" + jumlah +"</p></a>");
+                var judul_buku = field.judul_buku;
+                var penulis = field.penulis;
+                $("#listview").append("<a class='item' href='form.html?Id=" + Id + "&nama=" + nama + "&judul_buku=" + judul_buku + "&penulis=" + penulis + "'><h2>" + nama + " </h2><p>" + judul_buku + "</p><p>" + penulis + "</p></a>");
             });
         });
     });
@@ -28,7 +28,7 @@
     </div>
     <br/>
     <br/>
-    <ul class="list" id="listview">
+    <ul class="list" Id="listview">
     </ul>
 </body>
 
