@@ -3,9 +3,9 @@
  if(isset($_POST['insert']))
  {
  $nama=$_POST['nama'];
- $barang=$_POST['barang'];
- $jumlah=$_POST['jumlah'];
- $q=mysqli_query($con,"INSERT INTO `data` (`nama`,`barang`,`jumlah`) VALUES ('$nama','$barang','$jumlah')");
+ $judul_buku=$_POST['judul_buku'];
+ $penulis=$_POST['penulis'];
+ $q=mysqli_query($con,"INSERT INTO `data` (`nama`,`judul_buku`,`penulis`) VALUES ('$nama','$judul_buku','$penulis')");
  if($q)
   echo "success";
  else
