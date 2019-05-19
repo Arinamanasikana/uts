@@ -1,20 +1,20 @@
 <html>
 
 <head>
-    <title>Data Penduduk</title>
+    <title>Data Peminjam</title>
     <link rel="stylesheet" type="text/css" href="css/ionic.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
         $("#insert").click(function() {
             var nama = $("#nama").val();
-            var barang = $("#barang").val();
-            var jumlah = $("#jumlah").val();
-            var dataString = "nama=" + nama + "&barang=" + barang + "&jumlah=" + jumlah + "&insert=";
-            if ($.trim(nama).length > 0 & $.trim(barang).length > 0 & $.trim(jumlah).length > 0 ) {
+            var judul_buku = $("#judul_buku").val();
+            var penulis = $("#penulis").val();
+            var dataString = "nama=" + nama + "&judul_buku=" + judul_buku + "&penulis=" + penulis + "&insert=";
+            if ($.trim(nama).length > 0 & $.trim(judul_buku).length > 0 & $.trim(penulis).length > 0 ) {
                 $.ajax({
                     type: "POST",
-                    url: "https://yelcobaweb.000webhostapp.com/appcordova-test/appcordova/appcordova/www/insert.php",
+                    url: "https://manas10.000webhostapp.com/cordova-test/appcordova-test/appcordova/www/insert.php",
                     data: dataString,
                     crossDomain: true,
                     cache: false,
@@ -45,22 +45,21 @@
     <br/>
     <br/>
     <div class="list">
-        <input type="hidden" id="id" value="" />
+        <input type="hidden" Id="Id" value="" />
         <div class="item">
             <label>Nama</label>
-            <input type="text" id="nama" value="" />
+            <input type="text" Id="nama" value="" />
         </div>
         <div class="item">
-            <label>Barang</label>
-            <input type="text" id="barang" value="" />
+            <label>Judul Buku</label>
+            <input type="text" Id="judul_buku" value="" />
         </div>
         <div class="item">
-            <label>Jumlah</label>
-            <input type="text" id="jumlah" value="" />
+            <label>Penulis</label>
+            <input type="text" Id="penulis" value="" />
         </div>
-        
         <div class="item">
-            <input type="button" id="insert" class="button button-block" value="Insert" />
+            <input type="button" Id="insert" class="button button-block" value="Insert" />
         </div>
     </div>
 </body>
