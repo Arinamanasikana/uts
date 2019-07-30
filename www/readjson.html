@@ -12,9 +12,12 @@
             $.each(result, function(i, field) {
                 var Id = field.Id;
                 var nama = field.nama;
+                var alamat = field.alamat;
+                var asal_sekolah = field.asal_sekolah;
+                var jenis_kelamin = field.jenis_kelamin;
                 var judul_buku = field.judul_buku;
                 var penulis = field.penulis;
-                $("#listview").append("<a class='item' href='form.html?Id=" + Id + "&nama=" + nama + "&judul_buku=" + judul_buku + "&penulis=" + penulis + "'><h2>" + nama + " </h2><p>" + judul_buku + "</p><p>" + penulis + "</p></a>");
+                $("#listview").append("<a class='item' href='form.html?Id=" + Id + "&nama=" + nama + "&alamat=" + alamat + "&asal_sekolah=" + asal_sekolah + "&jenis_kelamin=" + jenis_kelamin + "&judul_buku=" + judul_buku + "&penulis=" + penulis + "'><h2>" + nama + " </h2><p>" + alamat + "</p><p>" + asal_sekolah + "</p><p>" + jenis_kelamin + "</p><p>" + judul_buku + "</p><p>" + penulis + "</p></a>");
             });
         });
     });
