@@ -8,10 +8,13 @@
     $(document).ready(function() {
         $("#insert").click(function() {
             var nama = $("#nama").val();
+            var alamat = $("#alamat").val();
+            var asal_sekolah = $("#asal_sekolah").val();
+            var jenis_kelamin = $("#jenis_kelamin").val();
             var judul_buku = $("#judul_buku").val();
             var penulis = $("#penulis").val();
-            var dataString = "nama=" + nama + "&judul_buku=" + judul_buku + "&penulis=" + penulis + "&insert=";
-            if ($.trim(nama).length > 0 & $.trim(judul_buku).length > 0 & $.trim(penulis).length > 0 ) {
+            var dataString = "&nama=" + nama + "&alamat=" + alamat + "&asal_sekolah=" + asal_sekolah + "&jenis_kelamin" + jenis_kelamin +  "&judul_buku=" + judul_buku + "&penulis=" + penulis + "&insert=";
+            if ($.trim(nama).length > 0 & $.trim(alamat).length > 0 & $.trim(asal_sekolah).length > 0 &                $.trim(jenis_kelamin).length > 0 & $.trim(judul_buku).length > 0 & $.trim(penulis).length > 0 ) {
                 $.ajax({
                     type: "POST",
                     url: "https://manas10.000webhostapp.com/cordova-test/appcordova-test/appcordova/www/insert.php",
@@ -49,6 +52,18 @@
         <div class="item">
             <label>Nama</label>
             <input type="text" Id="nama" value="" />
+        </div>
+        <div class="item">
+            <label>Alamat</label>
+            <input type="text" Id="alamat" value="" />
+        </div>
+        <div class="item">
+            <label>Asal Sekolah</label>
+            <input type="text" Id="asal_sekolah" value="" />
+        </div>
+        <div class="item">
+            <label>Jenis Kelamin</label>
+            <input type="text" Id="jenis_kelamin" value="" />
         </div>
         <div class="item">
             <label>Judul Buku</label>
