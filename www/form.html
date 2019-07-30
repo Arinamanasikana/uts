@@ -9,18 +9,27 @@
     $(document).ready(function() {
         var Id = decodeURI(getUrlVars()["Id"]);
         var nama = decodeURI(getUrlVars()["nama"]);
+        var alamat = decodeURI(getUrlVars()["alamat"]);
+        var asal_sekolah = decodeURI(getUrlVars()["asal_sekolah"]);
+        var jenis_kelamin = decodeURI(getUrlVars()["jenis_kelamin"]);
         var judul_buku = decodeURI(getUrlVars()["judul_buku"]);
         var penulis = decodeURI(getUrlVars()["penulis"]);
         $("#Id").val(Id);
         $("#nama").val(nama);
+        $("#alamat").val(alamat);
+        $("#asal_sekolah").val(asal_sekolah);
+        $("#jenis_kelamin").val(jenis_kelamin);
         $("#judul_buku").val(judul_buku);
         $("#penulis").val(penulis);
         $("#update").click(function() {
             var Id = $("#Id").val();
             var nama = $("#nama").val();
+            var alamat = $("#alamat").val();
+            var asal_sekolah = $("#asal_sekolah").val();
+            var jenis_kelamin = $("#jenis_kelamin").val();
             var judul_buku = $("#judul_buku").val();
             var penulis = $("#penulis").val();
-            var dataString = "Id=" + Id + "&nama=" + nama + "&judul_buku=" + judul_buku + "&penulis=" + penulis + "&update=";
+            var dataString = "Id=" + Id + "&nama=" + nama + "&alamat=" + alamat + "&asal_sekolah=" + asal_sekolah + "&jenis_kelamin=" + jenis_kelamin + "&judul_buku=" + judul_buku + "&penulis=" + penulis + "&update=";
             $.ajax({
                 type: "POST",
                 url: "https://manas10.000webhostapp.com/cordova-test/appcordova-test/appcordova/www/update.php",
@@ -81,6 +90,18 @@
         <div class="item">
             <label>Nama</label>
             <input type="text" Id="nama" value="" />
+        </div>
+        <div class="item">
+            <label>Alamat</label>
+            <input type="text" Id="alamat" value="" />
+        </div>
+        <div class="item">
+            <label>Asal Sekolah</label>
+            <input type="text" Id="asal_sekolah" value="" />
+        </div>
+        <div class="item">
+            <label>Jenis Kelamin</label>
+            <input type="text" Id="jenis_kelamin" value="" />
         </div>
         <div class="item">
             <label>Judul Buku</label>
